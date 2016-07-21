@@ -64,6 +64,8 @@ module.exports = function (pluginConfig, _ref, cb) {
             latestUnpublishedVersion = unpublishedVersions.reduce(function (prev, current) {
               return _semver2.default.gt(prev, current) ? prev : current;
             });
+
+            unpublishedVersionsExist = _semver2.default.gt(latestUnpublishedVersion, version);
           }
         }
       })();
