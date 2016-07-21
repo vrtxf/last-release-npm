@@ -46,6 +46,8 @@ module.exports = function (pluginConfig, {pkg, npm, plugins, options}, cb) {
           latestUnpublishedVersion = unpublishedVersions.reduce((prev, current) => {
             return (semver.gt(prev, current) ? prev : current)
           })
+
+          unpublishedVersionsExist = semver.gt(latestUnpublishedVersion, version)
         }
       }
     }
